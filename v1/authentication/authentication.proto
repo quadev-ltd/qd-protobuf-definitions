@@ -13,7 +13,7 @@ service AuthenticationService {
     rpc VerifyEmail(VerifyEmailRequest) returns (VerifyEmailResponse);
     rpc ResendEmailVerification(ResendEmailVerificationRequest) returns (ResendEmailVerificationResponse);
     rpc Authenticate(AuthenticateRequest) returns (AuthenticateResponse);
-    rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+    rpc RefreshToken(RefreshTokenRequest) returns (AuthenticateResponse);
 }
 
 message GetPublicKeyResponse {
@@ -69,14 +69,3 @@ message AuthenticateResponse {
 message RefreshTokenRequest {
     string token = 1;
 }
-
-message RefreshTokenResponse {
-    string auth_token = 1;
-    google.protobuf.Timestamp auth_token_expiry = 2;
-    string refresh_token = 3;
-    google.protobuf.Timestamp refresh_token_expiry = 4;
-    string user_email = 5;
-}
-
-
-
