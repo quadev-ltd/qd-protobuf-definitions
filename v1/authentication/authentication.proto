@@ -73,8 +73,7 @@ message VerifyResetPasswordTokenRequest {
 
 message VerifyResetPasswordTokenResponse {
     bool isValid = 1;
-    string userEmail = 2;
-    string message = 3;
+    string message = 2;
   }
 
 message ResetPasswordRequest {
