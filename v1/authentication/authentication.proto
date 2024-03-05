@@ -9,11 +9,12 @@ option go_package = "./gen/go/pb_authentication";
 
 service AuthenticationService {
     rpc GetPublicKey(GetPublicKeyRequest) returns (GetPublicKeyResponse);
-    rpc Register(RegisterRequest) returns (RegisterResponse);
-    rpc VerifyEmail(VerifyEmailRequest) returns (VerifyEmailResponse);
-    rpc ResendEmailVerification(ResendEmailVerificationRequest) returns (ResendEmailVerificationResponse);
+    rpc Register(RegisterRequest) returns (BaseResponse);
+    rpc VerifyEmail(VerifyEmailRequest) returns (BaseResponse);
+    rpc ResendEmailVerification(ResendEmailVerificationRequest) returns (BaseResponse);
     rpc Authenticate(AuthenticateRequest) returns (AuthenticateResponse);
     rpc RefreshToken(RefreshTokenRequest) returns (AuthenticateResponse);
+    rpc ForgotPassword(ForgotPasswordRequest) returns (BaseResponse);
 }
 
 message GetPublicKeyResponse {
@@ -30,7 +31,7 @@ message RegisterRequest {
     google.protobuf.Timestamp date_of_birth = 5;
 }
 
-message RegisterResponse {
+message BaseResponse {
     bool success = 1;
     string message = 2;
 }
@@ -39,18 +40,8 @@ message VerifyEmailRequest {
     string verification_token = 1;
 }
 
-message VerifyEmailResponse {
-    bool success = 1;
-    string message = 2;
-}
-
 message ResendEmailVerificationRequest {
     string auth_token = 1;
-}
-
-message ResendEmailVerificationResponse {
-    bool success = 1;
-    string message = 2;
 }
 
 message AuthenticateRequest {
@@ -68,4 +59,8 @@ message AuthenticateResponse {
 
 message RefreshTokenRequest {
     string token = 1;
+}
+
+message ForgotPasswordRequest {
+    string email = 1; // User's email address to send reset password link.
 }
