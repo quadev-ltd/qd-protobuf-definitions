@@ -15,6 +15,8 @@ service AuthenticationService {
     rpc Authenticate(AuthenticateRequest) returns (AuthenticateResponse);
     rpc RefreshToken(RefreshTokenRequest) returns (AuthenticateResponse);
     rpc ForgotPassword(ForgotPasswordRequest) returns (BaseResponse);
+    rpc VerifyResetPasswordToken(VerifyResetPasswordTokenRequest) returns (VerifyResetPasswordTokenResponse);
+    rpc ResetPassword(ResetPasswordRequest) returns (BaseResponse);
 }
 
 message GetPublicKeyResponse {
@@ -64,3 +66,19 @@ message RefreshTokenRequest {
 message ForgotPasswordRequest {
     string email = 1; // User's email address to send reset password link.
 }
+
+message VerifyResetPasswordTokenRequest {
+    string token = 1;
+}
+
+message VerifyResetPasswordTokenResponse {
+    bool isValid = 1;
+    string userEmail = 2;
+    string message = 3;
+  }
+
+message ResetPasswordRequest {
+    string token = 1;
+    string newPassword = 2;
+}
+  
