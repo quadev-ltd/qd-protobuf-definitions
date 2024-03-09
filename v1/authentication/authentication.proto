@@ -73,8 +73,7 @@ message ForgotPasswordRequest {
 
 message ForgotPasswordResponse {
     bool success = 1;
-    string user_id = 2;
-    string message = 3;
+    string message = 2;
 }
 
 message VerifyResetPasswordTokenRequest {
