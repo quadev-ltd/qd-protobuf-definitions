@@ -92,7 +92,7 @@ message User {
     string email = 2;
     string first_name = 3;
     string last_name = 4;
-    string birthday = 5;
+    google.protobuf.Timestamp date_of_birth = 5;
     google.protobuf.Timestamp registration_date = 6;
     string account_status = 7;
 }
