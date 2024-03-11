@@ -98,20 +98,20 @@ message User {
 }
 
 message UpdateUserProfileRequest {
-    string user_id = 1;
+    string auth_token = 1;
     string first_name = 2;
     string last_name = 3;
     string birthday = 4;
 }
   
 message UpdateUserProfileResponse {
-    string auth_token = 1;
+    User user = 1;
 }
 
 message GetUserProfileRequest {
-    string user_id = 1;
+    string auth_token = 1;
 }
   
 message GetUserProfileResponse {
-    string auth_token = 1;
+    User user = 1;
 }
