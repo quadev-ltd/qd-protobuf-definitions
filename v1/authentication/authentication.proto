@@ -93,6 +93,8 @@ message User {
     string first_name = 3;
     string last_name = 4;
     string birthday = 5;
+    google.protobuf.Timestamp registration_date = 6;
+    string account_status = 7;
 }
 
 message UpdateUserProfileRequest {
@@ -103,7 +105,7 @@ message UpdateUserProfileRequest {
 }
   
 message UpdateUserProfileResponse {
-    User user = 1;
+    string auth_token = 1;
 }
 
 message GetUserProfileRequest {
@@ -111,5 +113,5 @@ message GetUserProfileRequest {
 }
   
 message GetUserProfileResponse {
-    User user = 1;
+    string auth_token = 1;
 }
