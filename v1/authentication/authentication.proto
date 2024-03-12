@@ -101,7 +101,7 @@ message UpdateUserProfileRequest {
     string auth_token = 1;
     string first_name = 2;
     string last_name = 3;
-    string birthday = 4;
+    string date_of_birth = 4;
 }
   
 message UpdateUserProfileResponse {
