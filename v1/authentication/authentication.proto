@@ -61,9 +61,7 @@ message AuthenticateResponse {
     string user_id = 6;
 }
 
-message RefreshTokenRequest {
-    string token = 1;
-}
+message RefreshTokenRequest {}
 
 message ForgotPasswordRequest {
     string email = 1;
