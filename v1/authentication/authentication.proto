@@ -109,10 +109,3 @@ message GetUserProfileResponse {
     User user = 1;
 }
   
-// Represents an error related to a specific field, e.g., in a form submission.
-message FieldError {
-    // The name of the field related to this error.
-    string field = 1;  
-    // A message describing the error related to the field.
-    string error = 2;
-}
