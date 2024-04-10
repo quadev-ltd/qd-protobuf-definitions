@@ -108,3 +108,20 @@ message GetUserProfileRequest {}
 message GetUserProfileResponse {
     User user = 1;
 }
+
+message ErrorDetails {
+    // A unique error code that can be used to categorize the error.
+    string code = 1;
+    // A human-readable message providing more details about the error.
+    string error = 2;
+    // A list of field-specific errors, useful for form validation scenarios.
+    repeated FieldError field_errors = 3;
+}
+  
+// Represents an error related to a specific field, e.g., in a form submission.
+message FieldError {
+    // The name of the field related to this error.
+    string field = 1;  
+    // A message describing the error related to the field.
+    string error = 2;
+}
