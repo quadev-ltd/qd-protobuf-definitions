@@ -10,7 +10,7 @@ option go_package = "./gen/go/pb_authentication";
 service AuthenticationService {
     rpc GetPublicKey(GetPublicKeyRequest) returns (GetPublicKeyResponse);
     rpc Register(RegisterRequest) returns (RegisterResponse);
-    rpc VerifyEmail(VerifyEmailRequest) returns (AuthenticationResponse);
+    rpc VerifyEmail(VerifyEmailRequest) returns (AuthenticateResponse);
     rpc ResendEmailVerification(ResendEmailVerificationRequest) returns (BaseResponse);
     rpc Authenticate(AuthenticateRequest) returns (AuthenticateResponse);
     rpc RefreshToken(RefreshTokenRequest) returns (AuthenticateResponse);
