@@ -47,12 +47,12 @@ message BaseResponse {
 }
 
 message VerifyEmailRequest {
-    string userId = 1;
+    string userID = 1;
     string verificationToken = 2;
 }
 
 message ResendEmailVerificationRequest {
-    string userId = 1;
+    string userID = 1;
 }
 
 message AuthenticateRequest {
@@ -66,7 +66,7 @@ message AuthenticateResponse {
     string refreshToken = 3;
     google.protobuf.Timestamp refreshTokenExpiry = 4;
     string userEmail = 5;
-    string userId = 6;
+    string userID = 6;
 }
 
 message RefreshTokenRequest {}
@@ -76,7 +76,7 @@ message ForgotPasswordRequest {
 }
 
 message VerifyResetPasswordTokenRequest {
-    string userId = 1;
+    string userID = 1;
     string token = 2;
 }
 
@@ -86,7 +86,7 @@ message VerifyResetPasswordTokenResponse {
   }
 
 message ResetPasswordRequest {
-    string userId = 1;
+    string userID = 1;
     string token = 2;
     string newPassword = 3;
 }
@@ -98,7 +98,7 @@ enum AccountStatus {
 }
 
 message User {
-    string userId = 1;
+    string userID = 1;
     string email = 2;
     string firstName = 3;
     string lastName = 4;
