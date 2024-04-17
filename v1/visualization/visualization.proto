@@ -9,11 +9,11 @@ service VisualizationService {
 }
 
 message ImagePromptRequest {
-    string jwt_token = 1;
-    bytes image_data = 2;
+    string jwtToken = 1;
+    bytes imageData = 2;
     string prompt = 3;
 }
 
 message ImagePromptResponse {
-    string response_to_prompt = 1;
+    string responseToPrompt = 1;
 }

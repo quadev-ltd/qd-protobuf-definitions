@@ -22,7 +22,7 @@ service AuthenticationService {
 }
 
 message GetPublicKeyResponse {
-    string public_key = 1;
+    string publicKey = 1;
 }
 
 message GetPublicKeyRequest {}
@@ -30,9 +30,9 @@ message GetPublicKeyRequest {}
 message RegisterRequest {
     string email = 1;
     string password = 2;
-    string first_name = 3;
-    string last_name = 4;
-    google.protobuf.Timestamp date_of_birth = 5;
+    string firstName = 3;
+    string lastName = 4;
+    google.protobuf.Timestamp dateOfBirth = 5;
 }
 
 message RegisterResponse {
@@ -47,12 +47,12 @@ message BaseResponse {
 }
 
 message VerifyEmailRequest {
-    string user_id = 1;
-    string verification_token = 2;
+    string userId = 1;
+    string verificationToken = 2;
 }
 
 message ResendEmailVerificationRequest {
-    string user_id = 1;
+    string userId = 1;
 }
 
 message AuthenticateRequest {
@@ -61,12 +61,12 @@ message AuthenticateRequest {
 }
 
 message AuthenticateResponse {
-    string auth_token = 1;
-    google.protobuf.Timestamp auth_token_expiry = 2;
-    string refresh_token = 3;
-    google.protobuf.Timestamp refresh_token_expiry = 4;
-    string user_email = 5;
-    string user_id = 6;
+    string authToken = 1;
+    google.protobuf.Timestamp authTokenExpiry = 2;
+    string refreshToken = 3;
+    google.protobuf.Timestamp refreshTokenExpiry = 4;
+    string userEmail = 5;
+    string userId = 6;
 }
 
 message RefreshTokenRequest {}
@@ -76,35 +76,41 @@ message ForgotPasswordRequest {
 }
 
 message VerifyResetPasswordTokenRequest {
-    string user_id = 1;
+    string userId = 1;
     string token = 2;
 }
 
 message VerifyResetPasswordTokenResponse {
-    bool is_valid = 1;
+    bool isValid = 1;
     string message = 2;
   }
 
 message ResetPasswordRequest {
-    string user_id = 1;
+    string userId = 1;
     string token = 2;
-    string new_password = 3;
+    string newPassword = 3;
+}
+
+enum AccountStatus {
+    UNKNOWN = 0;
+    VERIFIED = 1;
+    UNVERIFIED = 2;
 }
 
 message User {
-    string user_id = 1;
+    string userId = 1;
     string email = 2;
-    string first_name = 3;
-    string last_name = 4;
-    google.protobuf.Timestamp date_of_birth = 5;
-    google.protobuf.Timestamp registration_date = 6;
-    string account_status = 7;
+    string firstName = 3;
+    string lastName = 4;
+    google.protobuf.Timestamp dateOfBirth = 5;
+    google.protobuf.Timestamp registrationDate = 6;
+    string accountStatus = 7;
 }
 
 message UpdateUserProfileRequest {
-    string first_name = 1;
-    string last_name = 2;
-    google.protobuf.Timestamp date_of_birth = 3;
+    string firstName = 1;
+    string lastName = 2;
+    google.protobuf.Timestamp dateOfBirth = 3;
 }
   
 message UpdateUserProfileResponse {
