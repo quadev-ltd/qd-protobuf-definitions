@@ -62,11 +62,7 @@ message AuthenticateRequest {
 
 message AuthenticateResponse {
     string authToken = 1;
-    google.protobuf.Timestamp authTokenExpiry = 2;
-    string refreshToken = 3;
-    google.protobuf.Timestamp refreshTokenExpiry = 4;
-    string userEmail = 5;
-    string userID = 6;
+    string refreshToken = 2;
 }
 
 message RefreshTokenRequest {}
