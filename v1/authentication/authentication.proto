@@ -13,6 +13,7 @@ service AuthenticationService {
     rpc VerifyEmail(VerifyEmailRequest) returns (AuthenticateResponse);
     rpc ResendEmailVerification(ResendEmailVerificationRequest) returns (BaseResponse);
     rpc Authenticate(AuthenticateRequest) returns (AuthenticateResponse);
+    rpc AuthenticateWithFirebase(AuthenticateWithFirebaseRequest) returns (AuthenticateResponse);
     rpc RefreshToken(RefreshTokenRequest) returns (AuthenticateResponse);
     rpc ForgotPassword(ForgotPasswordRequest) returns (BaseResponse);
     rpc VerifyResetPasswordToken(VerifyResetPasswordTokenRequest) returns (VerifyResetPasswordTokenResponse);
@@ -63,6 +64,10 @@ message AuthenticateRequest {
 message AuthenticateResponse {
     string authToken = 1;
     string refreshToken = 2;
+}
+
+message AuthenticateWithFirebaseRequest {
+    string idToken = 1;
 }
 
 message RefreshTokenRequest {}
