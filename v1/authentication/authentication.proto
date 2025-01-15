@@ -20,6 +20,7 @@ service AuthenticationService {
     rpc ResetPassword(ResetPasswordRequest) returns (BaseResponse);
     rpc UpdateUserProfile(UpdateUserProfileRequest) returns (UpdateUserProfileResponse);
     rpc GetUserProfile(GetUserProfileRequest) returns (GetUserProfileResponse);
+    rpc DeleteAccount(DeleteAccountRequest) returns (BaseResponse);
 }
 
 message GetPublicKeyResponse {
@@ -126,4 +127,5 @@ message GetUserProfileRequest {}
 message GetUserProfileResponse {
     User user = 1;
 }
-  
+ 
+message DeleteAccountRequest {}
