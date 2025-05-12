@@ -2,14 +2,14 @@ syntax = "proto3";
 
 package src.pb;
 
-option go_package = "./gen/go/pb_visualization";
+option go_package = "./gen/go/pb_image_analysis";
 
-service VisualizationService {
+service ImageAnalysisService {
     rpc ProcessImageAndPrompt (ImagePromptRequest) returns (ImagePromptResponse);
 }
 
 message ImagePromptRequest {
-    string jwtToken = 1;
+    string firebaseToken = 1;
     bytes imageData = 2;
     string prompt = 3;
 }
