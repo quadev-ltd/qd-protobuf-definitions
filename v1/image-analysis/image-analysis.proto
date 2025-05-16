@@ -9,7 +9,6 @@ service ImageAnalysisService {
 }
 
 message ImagePromptRequest {
-    string firebaseToken = 1;
     bytes imageData = 2;
     string prompt = 3;
 }
